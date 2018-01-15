@@ -1,4 +1,4 @@
-var Key = function() {
+let Key = function() {
   this.note = null;
   this.tonality = null;
   this.scale = [];
@@ -13,7 +13,7 @@ Key.prototype = {
     return this.note + this.tonality;
   },
   setScale: function() {
-    
+
   }
 }
 
