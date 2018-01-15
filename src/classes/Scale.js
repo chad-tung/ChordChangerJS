@@ -25,6 +25,8 @@ Scale.prototype = {
 
   setMinor: function() {
     let chromatic = this.chromatic;
+    let minorArr = [0, 2, 3, 5, 7, 8, 10, 12];
+    this.minor = _.pullAt(chromatic, minorArr);
   }
 };
 
