@@ -6,10 +6,10 @@ var Scale = function() {
 
 Scale.prototype = {
   setChromatic: function(note) {
-    var new_chromatic = this.chromatic;
-    var keyIndex = new_chromatic.indexOf(note);
-    var array2 = new_chromatic.slice(keyIndex);
-    new_chromatic.concat(array2);
+    var old_chromatic = this.chromatic;
+    var keyIndex = old_chromatic.indexOf(note);
+    var end_notes = old_chromatic.splice(0, keyIndex);
+    new_chromatic = old_chromatic.concat(end_notes);
     this.chromatic = new_chromatic;
   }
 };
