@@ -10,8 +10,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "testmocha": "mocha src/specs",
-    "test": "react-scripts test --env=jsdom",
+    "test": "mocha src/specs",
     "eject": "react-scripts eject"
   },
   "devDependencies": {

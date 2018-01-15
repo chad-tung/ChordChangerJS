@@ -7,9 +7,14 @@ var Key = function() {
 Key.prototype = {
   setKey: function(targetNote, targetTone) {
     this.note = targetNote;
-    this.tonality = tagetTone;
+    this.tonality = targetTone;
   },
   getKey: function() {
     return this.note + this.tonality;
+  },
+  setScale: function() {
+    
   }
 }
+
+module.exports = Key;
