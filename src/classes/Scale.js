@@ -1,7 +1,9 @@
+var _ = require('lodash');
+
 var Scale = function() {
   this.chromatic = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C"];
-  this.major = [];
-  this.minor = [];
+  this.major = ["C", "D", "E", "F", "G", "A", "B", "C"];
+  this.minor = ["C", "D", "D#", "F", "G", "G#", "A#", "C"];
 }
 
 Scale.prototype = {
@@ -16,10 +18,9 @@ Scale.prototype = {
   },
 
   setMajor: function() {
+    var chromatic = this.chromatic;
     var majorArr = [0, 2, 4, 5, 7, 9, 11, 13];
-    for (var i of majorArr) {
-      this.major.push(this.chromatic[i]);
-    }
+    this.major = _.pullAt(chromatic, majorArr);
   }
 };
 
