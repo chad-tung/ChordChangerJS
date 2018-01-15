@@ -5,9 +5,9 @@ var Scale = function() {
 }
 
 Scale.prototype = {
-  setChromatic: function(key) {
+  setChromatic: function(note) {
     var new_chromatic = this.chromatic;
-    var keyIndex = new_chromatic.indexOf(key.note);
+    var keyIndex = new_chromatic.indexOf(note);
     var array2 = new_chromatic.slice(keyIndex);
     new_chromatic.concat(array2);
     this.chromatic = new_chromatic;
