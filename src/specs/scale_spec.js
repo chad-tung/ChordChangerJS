@@ -25,4 +25,10 @@ describe('key tests', function() {
     scale.setMajor();
     assert.deepStrictEqual(scale.major, ["D", "E", "F#", "G", "A", "B", "C#", "D"]);
   });
+
+  it('should be able to set up minor scale', function() {
+    scale.setChromatic("A");
+    scale.setMinor();
+    assert.deepStrictEqual(scale.minor, ["A", "B", "C", "D", "E", "F", "G", "A"]);
+  });
 })
