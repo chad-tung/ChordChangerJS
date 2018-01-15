@@ -19,7 +19,7 @@ Scale.prototype = {
 
   setMajor: function() {
     var chromatic = this.chromatic;
-    var majorArr = [0, 2, 4, 5, 7, 9, 11, 13];
+    var majorArr = [0, 2, 4, 5, 7, 9, 11, 12];
     this.major = _.pullAt(chromatic, majorArr);
   }
 };
