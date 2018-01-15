@@ -8,11 +8,11 @@ describe('key tests', function() {
   });
 
   it('should have a chromatic', function() {
-    assert.deepStrictEqual(scale.chromatic, ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"]);
+    assert.deepStrictEqual(scale.chromatic, ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A"]);
   });
 
   it('should be able to alter the chromatic start point', function() {
     scale.setChromatic("C");
-    assert.deepStrictEqual(scale.chromatic, ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"])
+    assert.deepStrictEqual(scale.chromatic, ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C"])
   });
 })
