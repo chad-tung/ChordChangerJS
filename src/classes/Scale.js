@@ -2,6 +2,7 @@ let _ = require('lodash');
 
 let Scale = function() {
   this.chromatic = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C"];
+  this.flat_chromatic = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C"];
   this.major = ["C", "D", "E", "F", "G", "A", "B", "C"];
   this.minor = ["C", "D", "D#", "F", "G", "G#", "A#", "C"];
 }

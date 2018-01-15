@@ -11,6 +11,10 @@ describe('key tests', function() {
     assert.deepStrictEqual(scale.chromatic, ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C"]);
   });
 
+  it('should have a flat_chromatic', function() {
+    assert.deepStrictEqual(scale.flat_chromatic, ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C"]);
+  });
+
   it('should have a major', function() {
     assert.deepStrictEqual(scale.major, ["C", "D", "E", "F", "G", "A", "B", "C"]);
   })
