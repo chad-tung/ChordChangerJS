@@ -1,5 +1,5 @@
 var Scale = function() {
-  this.chromatic = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A"];
+  this.chromatic = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C"];
   this.major = [];
   this.minor = [];
 }
@@ -16,7 +16,7 @@ Scale.prototype = {
   },
 
   setMajor: function() {
-    var majorArr = [0, 2, 4, 5, 7, 9, 11, 0];
+    var majorArr = [0, 2, 4, 5, 7, 9, 11, 13];
     for (var i of majorArr) {
       this.major.push(this.chromatic[i]);
     }

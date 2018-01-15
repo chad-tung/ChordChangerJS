@@ -22,5 +22,5 @@ describe('key tests', function() {
   it('should be able to setKey', function() {
     key.setKey('C', 'major');
     assert.strictEqual(key.getKey(), 'Cmajor');
-  })
+  });
 })

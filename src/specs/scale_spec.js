@@ -15,4 +15,8 @@ describe('key tests', function() {
     scale.setChromatic("C");
     assert.deepStrictEqual(scale.chromatic, ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C"])
   });
+
+  it('should be able to set up major scale', function() {
+    scale.setChromatic("C");
+  })
 })
