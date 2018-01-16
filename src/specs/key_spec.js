@@ -8,7 +8,7 @@ describe('key tests', function() {
   });
 
   it('should start with no note', function() {
-    assert.strictEqual(key.note, null);
+    assert.strictEqual(key.keynote, null);
   });
 
   it('should have no scale', function() {

@@ -1,5 +1,5 @@
 let Key = function() {
-  this.note = null;
+  this.keynote = null;
   this.tonality = null;
   this.scale = [];
 }

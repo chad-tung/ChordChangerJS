@@ -17,7 +17,7 @@ let ScaleSet = function(note) {
   this.minor = ["C", "D", "D#", "F", "G", "G#", "A#", "C"];
 
 
-  if (note != null && (validLetters.includes(note))) {
+  if (note) {
     this.setScales(note);
   }
 }

@@ -67,4 +67,9 @@ describe('key tests', function() {
     assert.deepStrictEqual(newScaleSet.flat_chromatic, ["A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A"]);
     assert.deepStrictEqual(newScaleSet.minor, ["A", "B", "C", "D", "E", "F", "G", "A"]);
   });
+
+  it('should not set tonic for invalid notes', function() {
+    let newScaleSet = new ScaleSet("H");
+    assert.strictEqual(newScaleSet.tonic, "C");
+  });
 })
