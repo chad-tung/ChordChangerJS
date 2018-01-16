@@ -118,6 +118,7 @@ ScaleSet.prototype = {
       this.setMinor();
       this.setMajor();
     }
+  }
 
 };
 
