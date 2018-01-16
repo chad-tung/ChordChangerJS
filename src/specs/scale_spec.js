@@ -43,5 +43,5 @@ describe('key tests', function() {
     assert.deepStrictEqual(scale.sharp_chromatic, ["A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#"]);
 
     assert.deepStrictEqual(scale.flat_chromatic, ["Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb"]);
-  })
+  });
 })
