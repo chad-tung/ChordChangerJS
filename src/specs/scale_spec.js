@@ -20,19 +20,18 @@ describe('key tests', function() {
   })
 
   it('should be able to alter the chromatic start point', function() {
-    scale.setChromatic("A");
+    scale.setScales("A");
     assert.deepStrictEqual(scale.sharp_chromatic, ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A"]);
-    assert.deepStrictEqual(scale.flat_chromatic, ["A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A"]);
   });
 
   it('should be able to set up major scale', function() {
-    scale.setChromatic("D");
+    scale.setScales("D");
     scale.setMajor();
     assert.deepStrictEqual(scale.major, ["D", "E", "F#", "G", "A", "B", "C#", "D"]);
   });
 
   it('should be able to set up minor scale', function() {
-    scale.setChromatic("A");
+    scale.setScales("A");
     scale.setMinor();
     assert.deepStrictEqual(scale.minor, ["A", "B", "C", "D", "E", "F", "G", "A"]);
   });
