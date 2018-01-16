@@ -9,15 +9,27 @@ let Scale = function() {
 
 Scale.prototype = {
   setChromatic: function(note) {
-    // let chromatics = [this.chromatic, this.flat_chromatic];
-    // for (var old_chromatic in chromatics)
-    let old_chromatic = this.chromatic;
-    old_chromatic.pop();
-    let keyIndex = old_chromatic.indexOf(note);
-    let end_notes = old_chromatic.splice(0, keyIndex);
-    new_chromatic = old_chromatic.concat(end_notes);
-    new_chromatic.push(note);
-    this.chromatic = new_chromatic;
+    let changed_chromatic = this.chromatic;
+    let changed_flat_chromatic = this.flat_chromatic;
+    let chromatics = [changed_chromatic, changed_flat_chromatic];
+    let new_chromatics = [];
+    for (var old_chromatic of chromatics) {
+      old_chromatic.pop();
+      let keyIndex = old_chromatic.indexOf(note);
+      let end_notes = old_chromatic.splice(0, keyIndex);
+      new_chromatic = old_chromatic.concat(end_notes);
+      new_chromatic.push(note);
+      new_chromatics.push(new_chromatic);
+    }
+    this.chromatic = new_chromatics[0];
+    this.flat_chromatic = new_chromatics[1];
+    // let old_chromatic = this.chromatic;
+    // old_chromatic.pop();
+    // let keyIndex = old_chromatic.indexOf(note);
+    // let end_notes = old_chromatic.splice(0, keyIndex);
+    // new_chromatic = old_chromatic.concat(end_notes);
+    // new_chromatic.push(note);
+    // this.chromatic = new_chromatic;
   },
 
   setMajor: function() {
