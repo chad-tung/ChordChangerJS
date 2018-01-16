@@ -14,6 +14,7 @@ let Key = function(note, major_minor) {
   this.keynote = null;
   this.tonality = null;
   this.scale = [];
+  this.chords = [];
 }
 
 Key.prototype = {
