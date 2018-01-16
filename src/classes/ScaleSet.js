@@ -1,5 +1,14 @@
 let _ = require('lodash');
 
+let letters = ["A", "B", "C", "D", "E", "F", "G"];
+let validLetters = [];
+
+for (item of letters) {
+  validLetters.push(item);
+  validLetters.push(item + "#");
+  validLetters.push(item + "b");
+}
+
 let ScaleSet = function(note) {
   this.tonic = "C"
   this.sharp_chromatic = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C"];
@@ -7,15 +16,6 @@ let ScaleSet = function(note) {
   this.major = ["C", "D", "E", "F", "G", "A", "B", "C"];
   this.minor = ["C", "D", "D#", "F", "G", "G#", "A#", "C"];
 
-  let noteArr = [];
-  let letters = ["A", "B", "C", "D", "E", "F", "G"];
-  let validLetters = [];
-
-  for (item of letters) {
-    validLetters.push(item);
-    validLetters.push(item + "#");
-    validLetters.push(item + "b");
-  }
 
   if (note != null && (validLetters.includes(note))) {
     this.setScales(note);
@@ -106,17 +106,19 @@ ScaleSet.prototype = {
     // this.minor = _.at(chromatic, minorArr);
   },
   setScales: function(note) {
-    this.tonic = note;
-    let exceptions = ["Cb", "B#", "Fb", "E#"];
-    let replacements = ["B", "C", "E", "F"];
-    if (exceptions.includes(note)) {
-      this.tonic = replacements[exceptions.indexOf(note)];
+    if (validLetters.includes(note)) {
+      this.tonic = note;
+      let exceptions = ["Cb", "B#", "Fb", "E#"];
+      let replacements = ["B", "C", "E", "F"];
+      if (exceptions.includes(note)) {
+        this.tonic = replacements[exceptions.indexOf(note)];
+      }
+
+      this.setChromatic();
+      this.setMinor();
+      this.setMajor();
     }
 
-    this.setChromatic();
-    this.setMinor();
-    this.setMajor();
-  }
 };
 
 module.exports = ScaleSet;
