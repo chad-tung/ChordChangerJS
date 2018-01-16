@@ -7,7 +7,7 @@ describe('key tests', function() {
     scale = new ScaleSet();
   });
 
-  it('should have a tonic', function() {
+  it('should have a default tonic of C', function() {
     assert.strictEqual(scale.tonic, "C");
   })
 
