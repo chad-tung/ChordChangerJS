@@ -9,13 +9,6 @@ let ScaleSet = function() {
 }
 
 ScaleSet.prototype = {
-  getSharpChromatic: function() {
-    return this.sharp_chromatic;
-  },
-
-  getFlatChromatic: function() {
-    return this.flat_chromatic;
-  },
 
   setChromatic: function() {
     let exceptions = ["Db", "Eb", "Gb", "Ab", "Bb", "C#", "D#", "F#", "G#", "A#"]
@@ -81,13 +74,13 @@ ScaleSet.prototype = {
   },
 
   setMajor: function() {
-    let chromatic = this.getSharpChromatic();
+    let chromatic = this.sharp_chromatic;
     let majorArr = [0, 2, 4, 5, 7, 9, 11, 12];
     this.major = _.at(chromatic, majorArr);
   },
 
   setMinor: function() {
-    let chromatic = this.getSharpChromatic();
+    let chromatic = this.sharp_chromatic;
     let minorArr = [0, 2, 3, 5, 7, 8, 10, 12];
     this.minor = _.at(chromatic, minorArr);
   },
