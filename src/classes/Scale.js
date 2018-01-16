@@ -9,6 +9,8 @@ let Scale = function() {
 
 Scale.prototype = {
   setChromatic: function(note) {
+    // let chromatics = [this.chromatic, this.flat_chromatic];
+    // for (var old_chromatic in chromatics)
     let old_chromatic = this.chromatic;
     old_chromatic.pop();
     let keyIndex = old_chromatic.indexOf(note);
@@ -28,6 +30,10 @@ Scale.prototype = {
     let chromatic = this.chromatic;
     let minorArr = [0, 2, 3, 5, 7, 8, 10, 12];
     this.minor = _.pullAt(chromatic, minorArr);
+  },
+
+  setScales: function() {
+
   }
 };
 
