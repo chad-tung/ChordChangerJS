@@ -21,7 +21,8 @@ describe('key tests', function() {
 
   it('should be able to alter the chromatic start point', function() {
     scale.setChromatic("A");
-    assert.deepStrictEqual(scale.chromatic, ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A"])
+    assert.deepStrictEqual(scale.chromatic, ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A"]);
+    assert.deepStrictEqual(scale.flat_chromatic, ["A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A"]);
   });
 
   it('should be able to set up major scale', function() {
