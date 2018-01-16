@@ -46,12 +46,30 @@ ScaleSet.prototype = {
   },
 
   setMajor: function() {
-    let chromatic = this.sharp_chromatic;
-    let majorArr = [0, 2, 4, 5, 7, 9, 11, 12];
-    this.major = _.at(chromatic, majorArr);
+    let f_sharp_exception = "F#";
+    let flat_scales = ["F", "Bb", "Eb", "Ab", "Db"];
+    let sharp_scales = ["B", "E", "A", "D", "G", "C"];
+    let tonic = this.tonic;
+
+    let chromatic_scale = [];
+
+    if (tonic == f_sharp_exception) {
+      this.major = ["F#", "G#", "A#", "B", "C#", "D#", "E#", "F#"]
+    } else {
+      if (flat_scales.includes(tonic)) {
+        chromatic_scale = this.flat_chromatic;
+      } else {
+        chromatic_scale = this.sharp_chromatic;
+      }
+      let majorArr = [0, 2, 4, 5, 7, 9, 11, 12];
+      this.major = _.at(chromatic_scale, majorArr);
+    }
+
   },
 
   setMinor: function() {
+    // let e_flat_exception = "Eb";
+    // let
     let chromatic = this.sharp_chromatic;
     let minorArr = [0, 2, 3, 5, 7, 8, 10, 12];
     this.minor = _.at(chromatic, minorArr);
