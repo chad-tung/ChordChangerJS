@@ -49,4 +49,9 @@ describe('key tests', function() {
     scale.setScales("F");
     assert.deepStrictEqual(scale.major, ["F", "G", "A", "Bb", "C", "D", "E", "F"]);
   });
+
+  it('should be able to use flats for minor scales when appropriate', function() {
+    scale.setScales("D");
+    assert.deepStrictEqual(scale.minor, ["D", "E", "F", "G", "A", "Bb", "C", "D"]);
+  });
 })

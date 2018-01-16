@@ -84,7 +84,7 @@ ScaleSet.prototype = {
         chromatic_scale = this.sharp_chromatic;
       }
       let minorArr = [0, 2, 3, 5, 7, 8, 10, 12];
-      this.minor = _.at(chromatic, minorArr);
+      this.minor = _.at(chromatic_scale, minorArr);
     }
 
     // let chromatic = this.sharp_chromatic;
