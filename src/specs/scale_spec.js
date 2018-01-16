@@ -61,10 +61,10 @@ describe('key tests', function() {
   });
 
   it('should be able to construct with a different starting tonic', function() {
-    let newScaleSet = ScaleSet("A");
+    let newScaleSet = new ScaleSet("A");
     assert.strictEqual(newScaleSet.tonic, "A");
-    assert.strictEqual(newScaleSet.sharp_chromatic, ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A"]);
-    assert.strictEqual(newScaleSet.flat_chromatic, ["A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A"]);
-    assert.strictEqual(newScaleSet.minor, ["A", "B", "C", "D", "E", "F", "G", "A"]);
+    assert.deepStrictEqual(newScaleSet.sharp_chromatic, ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A"]);
+    assert.deepStrictEqual(newScaleSet.flat_chromatic, ["A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A"]);
+    assert.deepStrictEqual(newScaleSet.minor, ["A", "B", "C", "D", "E", "F", "G", "A"]);
   })
 })

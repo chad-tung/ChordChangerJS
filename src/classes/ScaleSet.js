@@ -11,13 +11,13 @@ let ScaleSet = function(note) {
   let letters = ["A", "B", "C", "D", "E", "F", "G"];
   let validLetters = [];
 
-  for (item in letters) {
+  for (item of letters) {
     validLetters.push(item);
     validLetters.push(item + "#");
     validLetters.push(item + "b");
   }
 
-  if (note && (validLetters.includes(note))) {
+  if (note != null && (validLetters.includes(note))) {
     this.setScales(note);
   }
 }
