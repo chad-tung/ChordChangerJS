@@ -9,13 +9,14 @@ let ScaleSet = function() {
 }
 
 ScaleSet.prototype = {
-  // setSharpChromatic: function() {
-  //   let exceptions = ["Db", "Eb", "Gb", "Ab", "Bb"];
-  //   let replacements = ["C#", "D#", "F#", "G#", "A#"];
-  //   if (!exceptions.indexOf(this.tonic)) {
-  //
-  //   }
-  // },
+  getSharpChromatic: function() {
+    return this.sharp_chromatic;
+  },
+
+  getFlatChromatic: function() {
+    return this.flat_chromatic;
+  },
+
   setChromatic: function() {
     let exceptions = ["Db", "Eb", "Gb", "Ab", "Bb", "C#", "D#", "F#", "G#", "A#"]
     let relative_flats = ["Db", "Eb", "Gb", "Ab", "Bb"];
@@ -80,19 +81,21 @@ ScaleSet.prototype = {
   },
 
   setMajor: function() {
-    let chromatic = this.sharp_chromatic;
+    let chromatic = this.getSharpChromatic();
     let majorArr = [0, 2, 4, 5, 7, 9, 11, 12];
-    this.major = _.pullAt(chromatic, majorArr);
+    this.major = _.at(chromatic, majorArr);
   },
 
   setMinor: function() {
-    let chromatic = this.sharp_chromatic;
+    let chromatic = this.getSharpChromatic();
     let minorArr = [0, 2, 3, 5, 7, 8, 10, 12];
-    this.minor = _.pullAt(chromatic, minorArr);
+    this.minor = _.at(chromatic, minorArr);
   },
   setScales: function(note) {
     this.tonic = note;
     this.setChromatic();
+    this.setMinor();
+    this.setMajor();
   }
 };
 
