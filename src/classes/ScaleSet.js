@@ -1,18 +1,19 @@
 let _ = require('lodash');
 
-let Scale = function() {
-  this.chromatic = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C"];
+let ScaleSet = function() {
+  this.sharp_chromatic = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C"];
   this.flat_chromatic = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C"];
   this.major = ["C", "D", "E", "F", "G", "A", "B", "C"];
   this.minor = ["C", "D", "D#", "F", "G", "G#", "A#", "C"];
 }
 
-Scale.prototype = {
+ScaleSet.prototype = {
   setChromatic: function(note) {
     let exceptions = ["C#", "D#", "G#", "A#", "Db", "Gb", "Ab", "Bb"];
     let exceptional_exceptions = ["Eb", "F#"];
 
-    let changed_chromatic = this.chromatic;
+// This function below works only for white keys.
+    let changed_chromatic = this.sharp_chromatic;
     let changed_flat_chromatic = this.flat_chromatic;
     let chromatics = [changed_chromatic, changed_flat_chromatic];
     let new_chromatics = [];
@@ -24,8 +25,10 @@ Scale.prototype = {
       new_chromatic.push(note);
       new_chromatics.push(new_chromatic);
     }
-    this.chromatic = new_chromatics[0];
+    this.sharp_chromatic = new_chromatics[0];
     this.flat_chromatic = new_chromatics[1];
+
+
     // let old_chromatic = this.chromatic;
     // old_chromatic.pop();
     // let keyIndex = old_chromatic.indexOf(note);
@@ -36,13 +39,13 @@ Scale.prototype = {
   },
 
   setMajor: function() {
-    let chromatic = this.chromatic;
+    let chromatic = this.sharp_chromatic;
     let majorArr = [0, 2, 4, 5, 7, 9, 11, 12];
     this.major = _.pullAt(chromatic, majorArr);
   },
 
   setMinor: function() {
-    let chromatic = this.chromatic;
+    let chromatic = this.sharp_chromatic;
     let minorArr = [0, 2, 3, 5, 7, 8, 10, 12];
     this.minor = _.pullAt(chromatic, minorArr);
   },
@@ -52,4 +55,4 @@ Scale.prototype = {
   }
 };
 
-module.exports = Scale;
+module.exports = ScaleSet;

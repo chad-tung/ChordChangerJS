@@ -1,14 +1,14 @@
 let assert = require('assert');
-let Scale = require('../classes/Scale.js');
+let ScaleSet = require('../classes/ScaleSet.js');
 
 describe('key tests', function() {
 
   beforeEach(function() {
-    scale = new Scale();
+    scale = new ScaleSet();
   });
 
   it('should have a chromatic', function() {
-    assert.deepStrictEqual(scale.chromatic, ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C"]);
+    assert.deepStrictEqual(scale.sharp_chromatic, ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C"]);
   });
 
   it('should have a flat_chromatic', function() {
@@ -21,7 +21,7 @@ describe('key tests', function() {
 
   it('should be able to alter the chromatic start point', function() {
     scale.setChromatic("A");
-    assert.deepStrictEqual(scale.chromatic, ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A"]);
+    assert.deepStrictEqual(scale.sharp_chromatic, ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A"]);
     assert.deepStrictEqual(scale.flat_chromatic, ["A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A"]);
   });
 
