@@ -54,4 +54,17 @@ describe('key tests', function() {
     scale.setScales("D");
     assert.deepStrictEqual(scale.minor, ["D", "E", "F", "G", "A", "Bb", "C", "D"]);
   });
+
+  it('should be able to handle accidentals that are white notes and alter the tonic accordingly', function() {
+    scale.setScales("B#");
+    assert.strictEqual(scale.tonic, "C");
+  });
+
+  it('should be able to construct with a different starting tonic', function() {
+    let newScaleSet = ScaleSet("A");
+    assert.strictEqual(newScaleSet.tonic, "A");
+    assert.strictEqual(newScaleSet.sharp_chromatic, ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A"]);
+    assert.strictEqual(newScaleSet.flat_chromatic, ["A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A"]);
+    assert.strictEqual(newScaleSet.minor, ["A", "B", "C", "D", "E", "F", "G", "A"]);
+  })
 })

@@ -1,11 +1,25 @@
 let _ = require('lodash');
 
-let ScaleSet = function() {
+let ScaleSet = function(note) {
   this.tonic = "C"
   this.sharp_chromatic = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C"];
   this.flat_chromatic = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C"];
   this.major = ["C", "D", "E", "F", "G", "A", "B", "C"];
   this.minor = ["C", "D", "D#", "F", "G", "G#", "A#", "C"];
+
+  let noteArr = [];
+  let letters = ["A", "B", "C", "D", "E", "F", "G"];
+  let validLetters = [];
+
+  for (item in letters) {
+    validLetters.push(item);
+    validLetters.push(item + "#");
+    validLetters.push(item + "b");
+  }
+
+  if (note && (validLetters.includes(note))) {
+    this.setScales(note);
+  }
 }
 
 ScaleSet.prototype = {
@@ -93,6 +107,12 @@ ScaleSet.prototype = {
   },
   setScales: function(note) {
     this.tonic = note;
+    let exceptions = ["Cb", "B#", "Fb", "E#"];
+    let replacements = ["B", "C", "E", "F"];
+    if (exceptions.includes(note)) {
+      this.tonic = replacements[exceptions.indexOf(note)];
+    }
+
     this.setChromatic();
     this.setMinor();
     this.setMajor();
