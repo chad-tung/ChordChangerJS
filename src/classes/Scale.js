@@ -9,6 +9,9 @@ let Scale = function() {
 
 Scale.prototype = {
   setChromatic: function(note) {
+    let exceptions = ["C#", "D#", "G#", "A#", "Db", "Gb", "Ab", "Bb"];
+    let exceptional_exceptions = ["Eb", "F#"];
+
     let changed_chromatic = this.chromatic;
     let changed_flat_chromatic = this.flat_chromatic;
     let chromatics = [changed_chromatic, changed_flat_chromatic];
