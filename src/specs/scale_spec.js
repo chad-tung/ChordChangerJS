@@ -44,4 +44,9 @@ describe('key tests', function() {
 
     assert.deepStrictEqual(scale.flat_chromatic, ["Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb"]);
   });
+
+  it('should be able to use flats for major scales when appropriate', function() {
+    scale.setScales("F");
+    assert.deepStrictEqual(scale.major, ["F", "G", "A", "Bb", "C", "D", "E", "F"]);
+  });
 })
