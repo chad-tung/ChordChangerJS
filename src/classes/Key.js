@@ -1,4 +1,16 @@
-let Key = function() {
+let ScaleSet = require('./ScaleSet.js');
+
+let letters = ["A", "B", "C", "D", "E", "F", "G"];
+let validLetters = [];
+let validTonal = ["major", "minor"]
+
+for (item of letters) {
+  validLetters.push(item);
+  validLetters.push(item + "#");
+  validLetters.push(item + "b");
+}
+
+let Key = function(note, major_minor) {
   this.keynote = null;
   this.tonality = null;
   this.scale = [];
@@ -12,8 +24,13 @@ Key.prototype = {
   getKey: function() {
     return this.note + this.tonality;
   },
-  setScale: function() {
-
+  setScale: function(note) {
+    let scales = new ScaleSet(note);
+    if (tonality == "major") {
+      this.scale = scales.major;
+    } else {
+      this.scale = scales.minor;
+    }
   }
 }
 
