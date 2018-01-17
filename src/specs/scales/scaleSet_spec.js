@@ -7,6 +7,7 @@ describe('ScaleSet test', function() {
     g_scaleset = new ScaleSet("G");
     c_sharp_scaleset = new ScaleSet("C#");
     g_flat_scaleset = new ScaleSet("Gb");
+    f_flat_scaleset = new ScaleSet("Fb");
   });
 
   // Default tests
@@ -75,7 +76,7 @@ describe('ScaleSet test', function() {
     assert.deepStrictEqual(c_sharp_scaleset.flat_chromatic, ["Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db"]);
   });
 
-  // f flat tests
+  // g flat tests
 
   it('should Gb initialise with a Gb tonic', function() {
     assert.strictEqual(g_flat_scaleset.tonic, "Gb")
@@ -95,5 +96,27 @@ describe('ScaleSet test', function() {
 
   it('should Gb initialise with a Gb chromatic flat scale', function() {
     assert.deepStrictEqual(g_flat_scaleset.flat_chromatic, ["Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb"]);
+  });
+
+  //  f flat tests
+
+  it('should Fb initialise with an E tonic', function() {
+    assert.strictEqual(f_flat_scaleset.tonic, "E");
+  });
+
+  it('should Fb initialise with an E major scale', function() {
+    assert.deepStrictEqual(f_flat_scaleset.major, ["E", "F#", "G#", "A", "B", "C#", "D#", "E"]);
+  });
+
+  it('should Fb initialise with an E minor scale', function() {
+    assert.deepStrictEqual(f_flat_scaleset.minor, ["E", "F#", "G", "A", "B", "C", "D", "E"]);
+  });
+
+  it('should Fb initialise with an E chromatic scale', function() {
+    assert.deepStrictEqual(f_flat_scaleset.sharp_chromatic, ["E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E"]);
+  });
+
+  it('should Fb initialise with an E chromatic flat scale', function() {
+    assert.deepStrictEqual(f_flat_scaleset.flat_chromatic, ["E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E"]);
   });
 });
