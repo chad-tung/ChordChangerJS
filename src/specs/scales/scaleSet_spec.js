@@ -51,4 +51,10 @@ describe('ScaleSet test', function() {
   it('should G initialise with a G chromatic flat scale', function() {
     assert.deepStrictEqual(g_scaleset.flat_chromatic, ["G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G"]);
   });
+
+  // C sharp tests
+
+  it('should C# initialise with a C# tonic', function() {
+    assert.strictEqual(c_sharp_scaleset.tonic, "C#");
+  });
 })
