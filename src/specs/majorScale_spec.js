@@ -10,5 +10,10 @@ describe('Major scale test', function() {
   it('should setup with a G major scale when G is passed in as an argument', function() {
     let g_major = new MajorScale("G");
     assert.deepStrictEqual(g_major.scale, ["G", "A", "B", "C", "D", "E", "F#", "G"]);
-  })
+  });
+
+  it('should setup an F major scale with a Bb in array', function() {
+    let f_major = new MajorScale("F");
+    assert.deepStrictEqual(f_major.scale, ["F", "G", "A", "Bb", "C", "D", "E", "F"]);
+  });
 })
