@@ -8,6 +8,8 @@ describe('ScaleSet test', function() {
     c_sharp_scaleset = new ScaleSet("C#");
     g_flat_scaleset = new ScaleSet("Gb");
     f_flat_scaleset = new ScaleSet("Fb");
+    invalid_scaleset = new ScaleSet("H");
+    invalid_scaleset2 = new ScaleSet(2);
   });
 
   // Default tests
@@ -119,4 +121,13 @@ describe('ScaleSet test', function() {
   it('should Fb initialise with an E chromatic flat scale', function() {
     assert.deepStrictEqual(f_flat_scaleset.flat_chromatic, ["E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E"]);
   });
+
+  it('should default construct for invalid input strings', function() {
+    assert.deepStrictEqual(invalid_scaleset, def_scaleset);
+  });
+
+  it('should set the tonic as C for integer arguments', function() {
+    assert.deepStrictEqual(invalid_scaleset2, def_scaleset);
+  });
+
 });
