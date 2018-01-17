@@ -20,12 +20,19 @@ MinorScale.prototype.setScale = function(note) {
   let flat_scales = ["D", "G", "C", "F", "Bb"];
   let sharp_scales = ["G#", "C#", "F#", "B", "E", "A"];
 
+  let exceptions = ["Db", "D#", "Gb", "Ab", "A#"];
+  let replacements = ["C#", "Eb", "F#", "G#", "Bb"];
+
   let chromatic_scale = [];
   let minor_scale = [];
   let keynote = ""
 
   if (validLetters.includes(note)) {
-    keynote = note;
+    if (exceptions.includes(note)) {
+      keynote = replacements[exceptions.indexOf(note)]
+    } else {
+      keynote = note;
+    }
   } else {
     keynote = "C"
   }
