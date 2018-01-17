@@ -87,5 +87,13 @@ describe('ScaleSet test', function() {
 
   it('should Gb initialise with a F# minor scale', function() {
     assert.deepStrictEqual(g_flat_scaleset.minor, ["F#", "G#", "A", "B", "C#", "D", "E", "F#"]);
-  })
+  });
+
+  it('should Gb initialise with a F# chromatic scale', function() {
+    assert.deepStrictEqual(g_flat_scaleset.sharp_chromatic, ["F#", "G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#"]);
+  });
+
+  it('should Gb initialise with a Gb chromatic flat scale', function() {
+    assert.deepStrictEqual(g_flat_scaleset.flat_chromatic, ["Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb"]);
+  });
 });
