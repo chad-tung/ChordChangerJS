@@ -6,6 +6,7 @@ describe('ScaleSet test', function() {
     def_scaleset = new ScaleSet();
     g_scaleset = new ScaleSet("G");
     c_sharp_scaleset = new ScaleSet("C#");
+    g_flat_scaleset = new ScaleSet("Gb");
   });
 
   // Default tests
@@ -73,4 +74,18 @@ describe('ScaleSet test', function() {
   it('should C# initialise with a Db chromatic scale', function() {
     assert.deepStrictEqual(c_sharp_scaleset.flat_chromatic, ["Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db"]);
   });
-})
+
+  // f flat tests
+
+  it('should Gb initialise with a Gb tonic', function() {
+    assert.strictEqual(g_flat_scaleset.tonic, "Gb")
+  });
+
+  it('should Gb initialise with a F# major scale', function() {
+    assert.deepStrictEqual(g_flat_scaleset.major, ["F#", "G#", "A#", "B", "C#", "D#", "E#", "F#"]);
+  });
+
+  it('should Gb initialise with a F# minor scale', function() {
+    assert.deepStrictEqual(g_flat_scaleset.minor, ["F#", "G#", "A", "B", "C#", "D", "E", "F#"]);
+  })
+});
