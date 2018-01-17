@@ -27,5 +27,5 @@ describe('Flat chromatic scale tests', function() {
     let bb_chrom = new FlatChromatic("Bb");
     bb_chrom.setScale("Gb");
     assert.deepStrictEqual(bb_chrom.scale, ["Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb"])
-  })
+  });
 })
