@@ -11,4 +11,9 @@ describe('Minor scale test', function() {
     let a_minor = new MinorScale("A");
     assert.deepStrictEqual(a_minor.scale, ["A", "B", "C", "D", "E", "F", "G", "A"]);
   });
+
+  it('should setup a B minor scale with C# and F#', function() {
+    let b_minor = new MinorScale("B");
+    assert.deepStrictEqual(b_minor.scale, ["B", "C#", "D", "E", "F#", "G", "A", "B"]);
+  });
 })
