@@ -1,7 +1,7 @@
 let assert = require('assert');
 let SharpChromatic = require('../classes/scales/SharpChromatic.js');
 
-describe('sharp chromatic scale tests', function() {
+describe('Sharp chromatic scale tests', function() {
 
   it('should have a default chromatic starting with C', function() {
     let c_chrom = new SharpChromatic();
@@ -22,4 +22,11 @@ describe('sharp chromatic scale tests', function() {
     let z_chrom = new SharpChromatic("h");
     assert.deepStrictEqual(z_chrom.scale, ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C"]);
   });
+
+  it('should NOT be able to set different keys after being initialised', function() {
+    let g_chrom = new SharpChromatic("G");
+    assert.deepStrictEqual(g_chrom.scale, ["G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G"]);
+    g_chrom.setScale("B");
+    assert.deepStrictEqual(g_chrom.scale, ["G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G"]);
+  })
 })

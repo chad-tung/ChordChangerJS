@@ -22,4 +22,10 @@ describe('Flat chromatic scale tests', function() {
     let z_chrom = new FlatChromatic("h");
     assert.deepStrictEqual(z_chrom.scale, ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C"]);
   });
+
+  it('should NOT be able to set a different scale after being created', function() {
+    let bb_chrom = new FlatChromatic("Bb");
+    bb_chrom.setScale("Gb");
+    assert.deepStrictEqual(bb_chrom.scale, ["Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb"])
+  })
 })
