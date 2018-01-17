@@ -1,26 +1,16 @@
-let letters = ["A", "B", "C", "D", "E", "F", "G"];
-let validLetters = [];
-
-for (item of letters) {
-  validLetters.push(item);
-  validLetters.push(item + "#");
-  validLetters.push(item + "b");
-}
-
-let default_chromatic = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C"]
-
-
 let SharpChromatic = function(note) {
   this.scale = this.setScale(note);
 }
 
 SharpChromatic.prototype.setScale = function (note) {
+  let default_chromatic = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C"]
+
   let relative_flats = ["Db", "Eb", "Gb", "Ab", "Bb"];
   let relative_sharps = ["C#", "D#", "F#", "G#", "A#"];
 
   let sharp_key = note;
 
-  if (note && validLetters.includes(note)) {
+  if (note) {
 
     if (relative_flats.includes(note)) {
       sharp_key = relative_sharps[relative_flats.indexOf(note)]

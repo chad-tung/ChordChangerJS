@@ -2,14 +2,6 @@ let _ = require('lodash');
 let SharpChromatic = require('./SharpChromatic.js');
 let FlatChromatic = require('./FlatChromatic.js');
 
-let letters = ["A", "B", "C", "D", "E", "F", "G"];
-let validLetters = [];
-
-for (item of letters) {
-  validLetters.push(item);
-  validLetters.push(item + "#");
-  validLetters.push(item + "b");
-}
 
 let MinorScale = function(note) {
   this.scale = this.setScale(note);
@@ -27,7 +19,7 @@ MinorScale.prototype.setScale = function(note) {
   let minor_scale = [];
   let keynote = ""
 
-  if (validLetters.includes(note)) {
+  if (note) {
     if (exceptions.includes(note)) {
       keynote = replacements[exceptions.indexOf(note)]
     } else {
