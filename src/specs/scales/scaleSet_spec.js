@@ -13,4 +13,8 @@ describe('ScaleSet test', function() {
   it('should default setup with a C minor scale', function() {
     assert.deepStrictEqual(def_scaleset.minor, ["C", "D", "Eb", "F", "G", "Ab", "Bb", "C"]);
   });
+
+  it('should default setup with a C chromatic', function() {
+    assert.deepStrictEqual(def_scaleset.sharp_chromatic, ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C"]);
+  });
 })
