@@ -16,4 +16,9 @@ describe('Major scale test', function() {
     let f_major = new MajorScale("F");
     assert.deepStrictEqual(f_major.scale, ["F", "G", "A", "Bb", "C", "D", "E", "F"]);
   });
+
+  it('should setup as a default C major scale if input is invalid', function() {
+    let invalid_major = new MajorScale('P');
+    assert.deepStrictEqual(invalid_major.scale, ["C", "D", "E", "F", "G", "A", "B", "C"])
+  })
 })
