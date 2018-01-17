@@ -61,4 +61,16 @@ describe('ScaleSet test', function() {
   it('should C# initialise with a C# major scale, which will be Db major', function() {
     assert.deepStrictEqual(c_sharp_scaleset.major, ["Db", "Eb", "F", "Gb", "Ab", "Bb", "C", "Db"]);
   });
+
+  it('should C# initialise with a C# minor scale', function() {
+    assert.deepStrictEqual(c_sharp_scaleset.minor, ["C#", "D#", "E", "F#", "G#", "A", "B", "C#"]);
+  });
+
+  it('should C# initialise with a C# chromatic scale', function() {
+    assert.deepStrictEqual(c_sharp_scaleset.sharp_chromatic, ["C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#"]);
+  });
+
+  it('should C# initialise with a Db chromatic scale', function() {
+    assert.deepStrictEqual(c_sharp_scaleset.flat_chromatic, ["Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db"]);
+  });
 })
