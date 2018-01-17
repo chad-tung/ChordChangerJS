@@ -11,7 +11,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "mocha src/specs",
+    "test": "find ./src/specs -name '*_spec.js' | xargs mocha -R spec",
     "eject": "react-scripts eject"
   },
   "devDependencies": {

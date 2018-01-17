@@ -1,5 +1,5 @@
 let assert = require('assert');
-let MajorScale = require('../classes/scales/MajorScale.js');
+let MajorScale = require('../../classes/scales/MajorScale.js');
 
 describe('Major scale test', function() {
   it('should default set up as a C major scale', function() {
@@ -19,6 +19,6 @@ describe('Major scale test', function() {
 
   it('should setup as a default C major scale if input is invalid', function() {
     let invalid_major = new MajorScale('P');
-    assert.deepStrictEqual(invalid_major.scale, ["C", "D", "E", "F", "G", "A", "B", "C"])
+    assert.deepStrictEqual(invalid_major.scale, ["C", "D", "E", "F", "G", "A", "B", "C"]);
   });
 })

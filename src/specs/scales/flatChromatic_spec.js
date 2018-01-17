@@ -1,5 +1,5 @@
 let assert = require('assert');
-let FlatChromatic = require('../classes/scales/FlatChromatic.js');
+let FlatChromatic = require('../../classes/scales/FlatChromatic.js');
 
 describe('Flat chromatic scale tests', function() {
 

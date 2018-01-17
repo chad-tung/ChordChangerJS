@@ -1,5 +1,5 @@
 let assert = require('assert');
-let MinorScale = require('../classes/scales/MinorScale.js');
+let MinorScale = require('../../classes/scales/MinorScale.js');
 
 describe('Minor scale test', function() {
   it('should default set up as a C minor scale', function() {
@@ -20,5 +20,5 @@ describe('Minor scale test', function() {
   it('should setup as a default of C minor scale if input is invalid', function() {
     let invalid_minor = new MinorScale("J");
     assert.deepStrictEqual(invalid_minor.scale, ["C", "D", "Eb", "F", "G", "Ab", "Bb", "C"])
-  })
+  });
 })
