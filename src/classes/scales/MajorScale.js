@@ -20,6 +20,8 @@ MajorScale.prototype.setScale = function(note) {
   let flat_scales = ["F", "Bb", "Eb", "Ab", "Db"];
   let sharp_scales = ["B", "E", "A", "D", "G", "C"];
 
+  let exceptions = []
+
   let chromatic_scale = [];
   let major_scale = [];
   let keynote = ""

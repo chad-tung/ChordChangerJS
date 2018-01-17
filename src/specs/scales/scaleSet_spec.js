@@ -57,4 +57,8 @@ describe('ScaleSet test', function() {
   it('should C# initialise with a C# tonic', function() {
     assert.strictEqual(c_sharp_scaleset.tonic, "C#");
   });
+
+  it('should C# initialise with a C# major scale, which will be Db major', function() {
+    assert.deepStrictEqual(c_sharp_scaleset.major, ["Db", "Eb", "F", "Gb", "Ab", "Bb", "C", "Db"]);
+  });
 })
