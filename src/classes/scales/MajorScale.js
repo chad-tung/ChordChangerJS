@@ -11,8 +11,6 @@ for (item of letters) {
   validLetters.push(item + "b");
 }
 
-// let default_scale = ["C", "D", "E", "F", "G", "A", "B", "C"];
-
 let MajorScale = function(note) {
   this.scale = this.setScale(note);
 }
