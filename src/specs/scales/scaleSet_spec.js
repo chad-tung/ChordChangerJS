@@ -8,6 +8,8 @@ describe('ScaleSet test', function() {
     c_sharp_scaleset = new ScaleSet("C#");
   });
 
+  // Default tests
+
   it('should default setup with a C tonic', function() {
     assert.strictEqual(def_scaleset.tonic, "C");
   })
@@ -28,7 +30,25 @@ describe('ScaleSet test', function() {
     assert.deepStrictEqual(def_scaleset.flat_chromatic, ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C"]);
   });
 
+  // G scaleset tests
+
   it('should G initialise with a G tonic', function() {
     assert.strictEqual(g_scaleset.tonic, "G");
-  })
+  });
+
+  it('should G initialise with a G major scale', function() {
+    assert.deepStrictEqual(g_scaleset.major, ["G", "A", "B", "C", "D", "E", "F#", "G"]);
+  });
+
+  it('should G initialise with a G minor scale', function() {
+    assert.deepStrictEqual(g_scaleset.minor, ["G", "A", "Bb", "C", "D", "Eb", "F", "G"]);
+  });
+
+  it('should G initialise with a G chromatic sharp scale', function() {
+    assert.deepStrictEqual(g_scaleset.sharp_chromatic, ["G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G"]);
+  });
+
+  it('should G initialise with a G chromatic flat scale', function() {
+    assert.deepStrictEqual(g_scaleset.flat_chromatic, ["G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G"]);
+  });
 })
