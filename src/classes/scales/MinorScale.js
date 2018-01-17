@@ -34,9 +34,9 @@ MinorScale.prototype.setScale = function(note) {
     minor_scale = ["Eb", "F", "Gb", "Ab", "Bb", "Cb", "Db", "Eb"];
   } else {
     if (flat_scales.includes(keynote)) {
-      chromatic_scale = new FlatChromatic(keynote);
+      chromatic_scale = new FlatChromatic(keynote).scale;
     } else {
-      chromatic_scale = new SharpChromatic(keynote);
+      chromatic_scale = new SharpChromatic(keynote).scale;
     }
     let minorArr = [0, 2, 3, 5, 7, 8, 10, 12];
     minor_scale = _.at(chromatic_scale, minorArr);
