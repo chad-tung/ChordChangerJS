@@ -1,6 +1,6 @@
 let Chord = function() {
   this.name = "";
-  this.triad = [];
+  this.notes = [];
 }
 
 module.exports = Chord;
