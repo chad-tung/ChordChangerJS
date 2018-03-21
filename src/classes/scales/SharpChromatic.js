@@ -11,7 +11,6 @@ SharpChromatic.prototype.setScale = function (note) {
   let sharp_key = note;
 
   if (note) {
-
     if (relative_flats.includes(note)) {
       sharp_key = relative_sharps[relative_flats.indexOf(note)]
     }
@@ -26,7 +25,6 @@ SharpChromatic.prototype.setScale = function (note) {
   } else {
     return default_chromatic;
   }
-
 
 };
 

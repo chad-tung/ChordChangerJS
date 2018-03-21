@@ -11,11 +11,6 @@ let ScaleSet = function(note) {
   this.minor = [];
 
   (note) ? this.setScales(note) : this.setScales();
-  // if (note) {
-  //   this.setScales(note);
-  // } else {
-  //   this.setScales();
-  // }
 }
 
 ScaleSet.prototype = {
@@ -33,15 +28,8 @@ ScaleSet.prototype = {
     let exceptions = ["Cb", "B#", "Fb", "E#"];
     let replacements = ["B", "C", "E", "F"];
 
-    if (!note || !validLetters.includes(note)) {
-      this.tonic = "C";
-    } else {
-      if (exceptions.includes(note)) {
-        this.tonic = replacements[exceptions.indexOf(note)]
-      } else {
-        this.tonic = note;
-      };
-    };
+    (!note || !validLetters.includes(note)) ? this.tonic = "C" : this.tonic =
+    (exceptions.includes(note)) ? replacements[exceptions.indexOf(note)] : note
   },
 
   setChromatic: function() {
@@ -55,11 +43,8 @@ ScaleSet.prototype = {
   },
 
   setScales: function(note) {
-    if (note) {
-      this.setTonic(note);
-    } else {
-      this.setTonic();
-    }
+    (note) ? this.setTonic(note) : this.setTonic();
+
     this.setChromatic();
     this.setMajorMinor();
   }

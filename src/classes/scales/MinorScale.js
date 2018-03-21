@@ -20,11 +20,8 @@ MinorScale.prototype.setScale = function(note) {
   let keynote = ""
 
   if (note) {
-    if (exceptions.includes(note)) {
-      keynote = replacements[exceptions.indexOf(note)]
-    } else {
-      keynote = note;
-    }
+    keynote = (exceptions.includes(note)) ?
+      replacements[exceptions.indexOf(note)] : note;
   } else {
     keynote = "C"
   }
@@ -32,15 +29,13 @@ MinorScale.prototype.setScale = function(note) {
   if (keynote == e_flat_exception) {
     minor_scale = ["Eb", "F", "Gb", "Ab", "Bb", "Cb", "Db", "Eb"];
   } else {
-    if (flat_scales.includes(keynote)) {
-      chromatic_scale = new FlatChromatic(keynote).scale;
-    } else {
-      chromatic_scale = new SharpChromatic(keynote).scale;
-    }
+    chromatic_scale = (flat_scales.includes(keynote)) ?
+      new FlatChromatic(keynote).scale : new SharpChromatic(keynote).scale
+
     let minorArr = [0, 2, 3, 5, 7, 8, 10, 12];
     minor_scale = _.at(chromatic_scale, minorArr);
   }
-
+// I think this is incorrect, this function should only deal with setting the function, not returning the scale it has set. That should be dealt with by a getter.
   return minor_scale
 };
 

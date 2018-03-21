@@ -26,8 +26,7 @@ FlatChromatic.prototype.setScale = function (note) {
   } else {
     return default_chromatic;
   }
-
-
+  
 };
 
 module.exports = FlatChromatic;

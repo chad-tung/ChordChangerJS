@@ -27,13 +27,7 @@ Key.prototype = {
   },
   setScale: function(note) {
     let scales = new ScaleSet(note);
-
     this.scale = (tonality === "major") ? scales.major : scales.minor;
-    // if (tonality == "major") {
-    //   this.scale = scales.major;
-    // } else {
-    //   this.scale = scales.minor;
-    // }
   }
 }
 

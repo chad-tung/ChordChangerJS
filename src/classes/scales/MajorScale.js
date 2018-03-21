@@ -20,11 +20,8 @@ MajorScale.prototype.setScale = function(note) {
   let keynote = ""
 
   if (note) {
-    if (exceptions.includes(note)) {
-      keynote = replacements[exceptions.indexOf(note)]
-    } else {
-      keynote = note;
-    }
+    keynote = (exceptions.includes(note)) ?
+      replacements[exceptions.indexOf(note)] : note;
   } else {
     keynote = "C"
   }
@@ -32,15 +29,14 @@ MajorScale.prototype.setScale = function(note) {
   if (keynote == f_sharp_exception) {
     major_scale = ["F#", "G#", "A#", "B", "C#", "D#", "E#", "F#"]
   } else {
-    if (flat_scales.includes(keynote)) {
-      chromatic_scale = new FlatChromatic(keynote).scale;
-    } else {
-      chromatic_scale = new SharpChromatic(keynote).scale;
-    }
+    chromatic_scale = (flat_scales.includes(keynote)) ?
+    new FlatChromatic(keynote).scale : new SharpChromatic(keynote).scale
+
     let majorArr = [0, 2, 4, 5, 7, 9, 11, 12];
     major_scale = _.at(chromatic_scale, majorArr);
   }
 
+// Same with minor scale, I think this is incorrect. I should also look into enums, much better way of designing this.
   return major_scale;
 }
 
