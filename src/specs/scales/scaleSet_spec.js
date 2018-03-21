@@ -122,6 +122,8 @@ describe('ScaleSet test', function() {
     assert.deepStrictEqual(f_flat_scaleset.flat_chromatic, ["E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db", "D", "Eb", "E"]);
   });
 
+  // Invalid input tests
+
   it('should default construct for invalid input strings', function() {
     assert.deepStrictEqual(invalid_scaleset, def_scaleset);
   });

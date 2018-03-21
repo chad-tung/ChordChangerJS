@@ -18,7 +18,7 @@ describe('Flat chromatic scale tests', function() {
     assert.deepStrictEqual(db_chrom.scale, ["Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C", "Db"]);
   });
 
-  xit('should set C as the chromatic for incompatible inputs', function() {
+  it('should set C as the chromatic for incompatible inputs', function() {
     let z_chrom = new FlatChromatic("h");
     assert.deepStrictEqual(z_chrom.scale, ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C"]);
   });
