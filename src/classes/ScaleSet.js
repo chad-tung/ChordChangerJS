@@ -10,11 +10,12 @@ let ScaleSet = function(note) {
   this.major = [];
   this.minor = [];
 
-  if (note) {
-    this.setScales(note);
-  } else {
-    this.setScales();
-  }
+  (note) ? this.setScales(note) : this.setScales();
+  // if (note) {
+  //   this.setScales(note);
+  // } else {
+  //   this.setScales();
+  // }
 }
 
 ScaleSet.prototype = {
