@@ -39,4 +39,8 @@ MinorScale.prototype.setScale = function(note) {
   return minor_scale
 };
 
+MinorScale.prototype.getScale = function() {
+  return this.scale;
+}
+
 module.exports = MinorScale;

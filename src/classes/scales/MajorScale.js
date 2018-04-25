@@ -35,9 +35,11 @@ MajorScale.prototype.setScale = function(note) {
     let majorArr = [0, 2, 4, 5, 7, 9, 11, 12];
     major_scale = _.at(chromatic_scale, majorArr);
   }
-
-// Same with minor scale, I think this is incorrect. I should also look into enums, much better way of designing this.
   return major_scale;
+}
+
+MajorScale.prototype.getScale = function() {
+  return this.scale;
 }
 
 module.exports = MajorScale;

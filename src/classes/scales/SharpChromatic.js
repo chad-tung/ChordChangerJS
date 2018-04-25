@@ -25,7 +25,10 @@ SharpChromatic.prototype.setScale = function (note) {
   } else {
     return default_chromatic;
   }
-
 };
+
+SharpChromatic.prototype.getScale = function() {
+  return this.scale;
+}
 
 module.exports = SharpChromatic;
