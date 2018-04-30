@@ -20,7 +20,7 @@ class FlatChromatic extends Scale {
         flat_key = relative_flats[relative_sharps.indexOf(note)]
       }
 
-      let old_chromatic = default_chromatic.slice(0, 12);
+      const old_chromatic = default_chromatic.slice(0, 12);
 
       let keyIndex = old_chromatic.indexOf(flat_key);
       let end_notes = old_chromatic.splice(0, keyIndex);

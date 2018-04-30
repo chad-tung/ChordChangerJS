@@ -1,7 +1,7 @@
-let _ = require('lodash');
-let SharpChromatic = require('./SharpChromatic.js');
-let FlatChromatic = require('./FlatChromatic.js');
-let Scale = require('./Scale.js');
+const _ = require('lodash');
+const SharpChromatic = require('./SharpChromatic.js');
+const FlatChromatic = require('./FlatChromatic.js');
+const Scale = require('./Scale.js');
 
 class MinorScale extends Scale {
   constructor(note) {
@@ -10,12 +10,12 @@ class MinorScale extends Scale {
   }
 
   setScale(note) {
-    let e_flat_exception = "Eb";
-    let flat_scales = ["D", "G", "C", "F", "Bb"];
-    let sharp_scales = ["G#", "C#", "F#", "B", "E", "A"];
+    const e_flat_exception = "Eb";
+    const flat_scales = ["D", "G", "C", "F", "Bb"];
+    const sharp_scales = ["G#", "C#", "F#", "B", "E", "A"];
 
-    let exceptions = ["Db", "D#", "Gb", "Ab", "A#"];
-    let replacements = ["C#", "Eb", "F#", "G#", "Bb"];
+    const exceptions = ["Db", "D#", "Gb", "Ab", "A#"];
+    const replacements = ["C#", "Eb", "F#", "G#", "Bb"];
 
     let chromatic_scale = [];
     let minor_scale = [];
