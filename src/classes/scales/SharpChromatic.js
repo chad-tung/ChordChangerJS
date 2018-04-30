@@ -37,7 +37,8 @@ let Scale = require('./Scale.js');
 
 class SharpChromatic extends Scale {
   constructor(note) {
-    this.scale = setScale(note);
+    super(note);
+    this.scale = this.setScale(note);
   }
 
   setScale(note) {
@@ -53,7 +54,7 @@ class SharpChromatic extends Scale {
         sharp_key = relative_sharps[relative_flats.indexOf(note)]
       }
 
-      old_chromatic = default_chromatic.slice(0, 12);
+      let old_chromatic = default_chromatic.slice(0, 12);
 
       let keyIndex = old_chromatic.indexOf(sharp_key);
       let end_notes = old_chromatic.splice(0, keyIndex);
