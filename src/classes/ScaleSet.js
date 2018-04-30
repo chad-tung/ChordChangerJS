@@ -43,7 +43,7 @@ ScaleSet.prototype = {
   },
 
   setScales: function(note) {
-    (note) ? this.setTonic(note) : this.setTonic();
+    this.setTonic(note);
 
     this.setChromatic();
     this.setMajorMinor();
