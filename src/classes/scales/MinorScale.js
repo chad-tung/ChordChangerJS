@@ -3,7 +3,6 @@ let SharpChromatic = require('./SharpChromatic.js');
 let FlatChromatic = require('./FlatChromatic.js');
 let Scale = require('./Scale.js');
 
-
 class MinorScale extends Scale {
   constructor(note) {
     super(note);
