@@ -3,17 +3,16 @@ let FlatChromatic = require('./scales/FlatChromatic.js');
 let MajorScale = require('./scales/MajorScale.js');
 let MinorScale = require('./scales/MinorScale.js');
 
-let ScaleSet = function(note) {
-  this.tonic = "";
-  this.sharp_chromatic = [];
-  this.flat_chromatic = [];
-  this.major = [];
-  this.minor = [];
+class ScaleSet {
+  constructor(note) {
+    this.tonic = "";
+    this.sharp_chromatic = [];
+    this.flat_chromatic = [];
+    this.major = [];
+    this.minor = [];
 
-  (note) ? this.setScales(note) : this.setScales();
-}
-
-ScaleSet.prototype = {
+    (note) ? this.setScales(note) : this.setScales();
+  }
 
   setTonic(note) {
     let letters = ["A", "B", "C", "D", "E", "F", "G"];
@@ -30,19 +29,19 @@ ScaleSet.prototype = {
 
     (!note || !validLetters.includes(note)) ? this.tonic = "C" : this.tonic =
     (exceptions.includes(note)) ? replacements[exceptions.indexOf(note)] : note
-  },
+  }
 
-  setChromatic: function() {
+  setChromatic() {
     this.sharp_chromatic = new SharpChromatic(this.tonic).scale;
     this.flat_chromatic = new FlatChromatic(this.tonic).scale;
-  },
+  }
 
-  setMajorMinor: function() {
+  setMajorMinor() {
     this.major = new MajorScale(this.tonic).scale;
     this.minor = new MinorScale(this.tonic).scale;
-  },
+  }
 
-  setScales: function(note) {
+  setScales(note) {
     this.setTonic(note);
 
     this.setChromatic();
