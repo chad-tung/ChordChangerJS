@@ -7,10 +7,10 @@ class FlatChromatic extends Scale {
   }
 
   setScale(note) {
-    const default_chromatic = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B", "C"]
+    const default_chromatic = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B', 'C']
 
-    const relative_flats = ["Db", "Eb", "Gb", "Ab", "Bb"]
-    const relative_sharps = ["C#", "D#", "F#", "G#", "A#"]
+    const relative_flats = ['Db', 'Eb', 'Gb', 'Ab', 'Bb']
+    const relative_sharps = ['C#', 'D#', 'F#', 'G#', 'A#']
 
     let flat_key = note
 

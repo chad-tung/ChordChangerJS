@@ -1,5 +1,5 @@
 let Chord = function() {
-  this.name = ""
+  this.name = ''
   this.notes = []
 }
 

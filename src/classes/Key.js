@@ -1,13 +1,13 @@
 let ScaleSet = require('./ScaleSet.js')
 
-let letters = ["A", "B", "C", "D", "E", "F", "G"]
+let letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 let validLetters = []
-let validTonal = ["major", "minor"]
+let validTonal = ['major', 'minor']
 
 for (item of letters) {
   validLetters.push(item)
-  validLetters.push(item + "#")
-  validLetters.push(item + "b")
+  validLetters.push(item + '#')
+  validLetters.push(item + 'b')
 }
 
 class Key {
@@ -29,7 +29,7 @@ class Key {
 
   setScale(note) {
       let scales = new ScaleSet(note)
-      this.scale = (tonality === "major") ? scales.major : scales.minor
+      this.scale = (tonality === 'major') ? scales.major : scales.minor
     }
 }
 

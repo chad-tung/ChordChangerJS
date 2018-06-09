@@ -10,26 +10,26 @@ class MinorScale extends Scale {
   }
 
   setScale(note) {
-    const e_flat_exception = "Eb"
-    const flat_scales = ["D", "G", "C", "F", "Bb"]
-    const sharp_scales = ["G#", "C#", "F#", "B", "E", "A"]
+    const e_flat_exception = 'Eb'
+    const flat_scales = ['D', 'G', 'C', 'F', 'Bb']
+    const sharp_scales = ['G#', 'C#', 'F#', 'B', 'E', 'A']
 
-    const exceptions = ["Db", "D#", "Gb", "Ab", "A#"]
-    const replacements = ["C#", "Eb", "F#", "G#", "Bb"]
+    const exceptions = ['Db', 'D#', 'Gb', 'Ab', 'A#']
+    const replacements = ['C#', 'Eb', 'F#', 'G#', 'Bb']
 
     let chromatic_scale = []
     let minor_scale = []
-    let keynote = ""
+    let keynote = ''
 
     if (note) {
       keynote = (exceptions.includes(note)) ?
         replacements[exceptions.indexOf(note)] : note
     } else {
-      keynote = "C"
+      keynote = 'C'
     }
 
     if (keynote == e_flat_exception) {
-      minor_scale = ["Eb", "F", "Gb", "Ab", "Bb", "Cb", "Db", "Eb"]
+      minor_scale = ['Eb', 'F', 'Gb', 'Ab', 'Bb', 'Cb', 'Db', 'Eb']
     } else {
       chromatic_scale = (flat_scales.includes(keynote)) ?
         new FlatChromatic(keynote).scale : new SharpChromatic(keynote).scale

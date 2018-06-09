@@ -7,10 +7,10 @@ class SharpChromatic extends Scale {
   }
 
   setScale(note) {
-    const default_chromatic = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C"]
+    const default_chromatic = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C']
 
-    const relative_flats = ["Db", "Eb", "Gb", "Ab", "Bb"]
-    const relative_sharps = ["C#", "D#", "F#", "G#", "A#"]
+    const relative_flats = ['Db', 'Eb', 'Gb', 'Ab', 'Bb']
+    const relative_sharps = ['C#', 'D#', 'F#', 'G#', 'A#']
 
     let sharp_key = note
 
