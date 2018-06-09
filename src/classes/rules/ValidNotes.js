@@ -1,18 +1,19 @@
 class ValidNotes
 {
   constructor() {
-    this.notes = []
     this.setValidNotes()
+    this.exceptions = ['Cb', 'B#', 'Fb', 'E#']
+    this.replacements = ['B', 'C', 'E', 'F']
   }
 
   setValidNotes() {
-    let letters = ["A", "B", "C", "D", "E", "F", "G"]
+    let letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
     let validLetters = []
 
-    for (item of letters) {
-      validLetters.push(item)
-      validLetters.push(item + "#")
-      validLetters.push(item + "b")
+    for (let i = 0; i < letters.length; i ++) {
+      validLetters.push(letters[i])
+      validLetters.push(letters[i] + '#')
+      validLetters.push(letters[i] + 'b')
     }
 
     this.notes = validLetters
@@ -20,6 +21,14 @@ class ValidNotes
 
   getValidNotes() {
     return this.notes
+  }
+
+  getExceptions() {
+    return this.exceptions
+  }
+
+  getReplacements() {
+    return this.replacements
   }
 }
 

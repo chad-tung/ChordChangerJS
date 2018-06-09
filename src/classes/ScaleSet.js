@@ -2,6 +2,7 @@ let SharpChromatic = require('./scales/SharpChromatic.js')
 let FlatChromatic = require('./scales/FlatChromatic.js')
 let MajorScale = require('./scales/MajorScale.js')
 let MinorScale = require('./scales/MinorScale.js')
+let ValidNotes = require('./rules/ValidNotes')
 
 class ScaleSet {
   constructor(note) {
@@ -15,17 +16,10 @@ class ScaleSet {
   }
 
   setTonic(note) {
-    let letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
-    let validLetters = []
-
-    for (item of letters) {
-      validLetters.push(item)
-      validLetters.push(item + '#')
-      validLetters.push(item + 'b')
-    }
-
-    let exceptions = ['Cb', 'B#', 'Fb', 'E#']
-    let replacements = ['B', 'C', 'E', 'F']
+    let validNoteObject = new ValidNotes()
+    let validLetters = validNoteObject.getValidNotes()
+    let exceptions = validNoteObject.getExceptions()
+    let replacements = validNoteObject.getReplacements()
 
     if (note && validLetters.includes(note)) {
       this.tonic = (exceptions.includes(note)) ? replacements[exceptions.indexOf(note)] : note
