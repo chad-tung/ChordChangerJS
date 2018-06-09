@@ -1,7 +1,7 @@
 class Scale {
   constructor(note) {
-    this.root_note = note;
+    this.root_note = note
   }
 }
 
-module.exports = Scale;
+module.exports = Scale

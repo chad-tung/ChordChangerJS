@@ -1,29 +1,29 @@
-const _ = require('lodash');
-const SharpChromatic = require('./SharpChromatic.js');
-const FlatChromatic = require('./FlatChromatic.js');
-const Scale = require('./Scale.js');
+const _ = require('lodash')
+const SharpChromatic = require('./SharpChromatic.js')
+const FlatChromatic = require('./FlatChromatic.js')
+const Scale = require('./Scale.js')
 
 class MajorScale extends Scale {
   constructor(note) {
-    super(note);
-    this.scale = this.setScale(note);
+    super(note)
+    this.scale = this.setScale(note)
   }
 
   setScale(note) {
     const f_sharp_exception = "F#"
-    const flat_scales = ["F", "Bb", "Eb", "Ab", "Db"];
-    const sharp_scales = ["B", "E", "A", "D", "G", "C"];
+    const flat_scales = ["F", "Bb", "Eb", "Ab", "Db"]
+    const sharp_scales = ["B", "E", "A", "D", "G", "C"]
 
-    const exceptions = ["C#", "D#", "Gb", "G#", "A#"];
+    const exceptions = ["C#", "D#", "Gb", "G#", "A#"]
     const replacements = ["Db", "Eb", "F#", "Ab", "Bb"]
 
-    let chromatic_scale = [];
-    let major_scale = [];
+    let chromatic_scale = []
+    let major_scale = []
     let keynote = ""
 
     if (note) {
       keynote = (exceptions.includes(note)) ?
-        replacements[exceptions.indexOf(note)] : note;
+        replacements[exceptions.indexOf(note)] : note
     } else {
       keynote = "C"
     }
@@ -34,15 +34,15 @@ class MajorScale extends Scale {
       chromatic_scale = (flat_scales.includes(keynote)) ?
       new FlatChromatic(keynote).scale : new SharpChromatic(keynote).scale
 
-      let majorArr = [0, 2, 4, 5, 7, 9, 11, 12];
-      major_scale = _.at(chromatic_scale, majorArr);
+      let majorArr = [0, 2, 4, 5, 7, 9, 11, 12]
+      major_scale = _.at(chromatic_scale, majorArr)
     }
-    return major_scale;
+    return major_scale
   }
 
   getScale() {
-    return this.scale;
+    return this.scale
   }
 }
 
-module.exports = MajorScale;
+module.exports = MajorScale
